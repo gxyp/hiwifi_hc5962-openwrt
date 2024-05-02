@@ -19,5 +19,6 @@ mv "${OP_BUILD_PATH}"/.config "${OP_BUILD_PATH}"/lede/.config
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 make defconfig
 make download -j8
-make V=s -j$(nproc)
+#make V=s -j$(nproc)
+make V=s -j1
 echo "FILE_DATE=$(date +%Y%m%d%H%M)" >>"$GITHUB_ENV"
